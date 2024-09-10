@@ -2,7 +2,7 @@ import java.nio.file.Path;
 
 
 public class TraversalPathIssue {
-    public void copyWorkingBlobFileToOriginal(String storage, String container, String fileName) {
+    public Path copyWorkingBlobFileToOriginal(String storage, String container, String fileName) {
 
         Path sourceFile = SecurityUtils.validateAndBuildPath(
                 storage,
@@ -13,6 +13,6 @@ public class TraversalPathIssue {
                 SecurityUtils.validateContainer(container),
                 SecurityUtils.validateStorageFolder(storage),
                 SecurityUtils.sanitizeFileName(fileName));
+        return sourceFile;
     }
-
 }
