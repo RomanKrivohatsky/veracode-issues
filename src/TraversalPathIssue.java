@@ -5,9 +5,9 @@ public class TraversalPathIssue {
     public void copyWorkingBlobFileToOriginal(String storage, String container, String fileName) {
 
         Path sourceFile = SecurityUtils.validateAndBuildPath(
-                SecurityUtils.validateStorage(storage),
-                SecurityUtils.validateContainer(container),
-                SecurityUtils.sanitizeFileName(fileName)
+                storage,
+                container,
+                fileName
         );
         Path targetFile = Path.of(SecurityUtils.validateStorage(storage),
                 SecurityUtils.validateContainer(container),
